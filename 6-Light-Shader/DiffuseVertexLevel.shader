@@ -50,6 +50,7 @@ Shader "Unity Shaders Book/Chapter 6/Diffuse Vertex-Level" {
                 // 计算光照方向，获取世界空间的光线方向
                 fixed3 worldLight = normalize(_WorldSpaceLightPos0.xyz);
                 // 计算漫反射，c_diffuse = ( c_light * m_diffuse )max(0, n·I)
+                // saturate(x) 将 x 截取在 [0, 1] 范围中，如果 x 是一个矢量，那么对它的每一个分量进行操作
                 fixed3 diffuse = _LightColor0.rgb * _Diffuse.rgb * saturate(dot(worldNormal, worldLight));
                 
                 // 计算颜色，混合环境光和漫反射
