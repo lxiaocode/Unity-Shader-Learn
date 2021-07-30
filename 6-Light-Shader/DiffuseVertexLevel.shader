@@ -13,7 +13,9 @@ Shader "Unity Shaders Book/Chapter 6/Diffuse Vertex-Level" {
     SubShader {
         Pass { 
             // 指定光照模式，用于 unity 计算光源相关的变量
-            // 在这里用于获取光源的颜色和强度变量：_LightColor0
+            // 在这里用于获取：
+            //      光源的颜色和强度变量：_LightColor0
+            //      光源方向：_WorldSpaceLightPos0
             Tags { "LightMode"="ForwardBase" }
 
             CGPROGRAM
